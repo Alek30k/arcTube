@@ -20,13 +20,10 @@ const SignIn = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post(
-        "https://aletube.herokuapp.com/api/auth/signin",
-        {
-          name,
-          password,
-        }
-      );
+      const res = await axios.post("/auth/signin", {
+        name,
+        password,
+      });
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (error) {
@@ -38,14 +35,11 @@ const SignIn = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post(
-        "https://aletube.herokuapp.com/api/auth/signup",
-        {
-          name,
-          email,
-          password,
-        }
-      );
+      const res = await axios.post("/auth/signup", {
+        name,
+        email,
+        password,
+      });
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (error) {
@@ -58,7 +52,7 @@ const SignIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         axios
-          .post("https://aletube.herokuapp.com/api/auth/google", {
+          .post("/auth/google", {
             name: result.user.displayName,
             email: result.user.email,
             img: result.user.photoURL,

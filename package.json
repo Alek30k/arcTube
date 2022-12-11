@@ -49,5 +49,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://aletube.herokuapp.com/api/"
+  "proxy": "https://server-arctube-production.up.railway.app/api/"
 }

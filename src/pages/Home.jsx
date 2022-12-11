@@ -9,19 +9,15 @@ const Container = styled.div`
   flex-wrap: wrap;
 `;
 
-
 const Home = ({ type }) => {
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchVideos = async () => {
-      const res = await axios.get(
-        `https://aletube.herokuapp.com/api/videos/${type}`
-      );
+      const res = await axios.get(`/videos/${type}`);
       setVideos(res.data);
-      setLoading(false)
-      
+      setLoading(false);
     };
     fetchVideos();
   }, [type]);

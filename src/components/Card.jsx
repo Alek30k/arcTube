@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 //  import { format } from "timeago.js";
 import axios from "axios";
-import skeleton from "react-loading-skeleton";
 
 const Card = ({ type, video }) => {
   const [channel, setChannel] = useState({});
@@ -17,9 +16,7 @@ const Card = ({ type, video }) => {
 
   useEffect(() => {
     const fetchChannel = async () => {
-      const res = await axios.get(
-        `https://aletube.herokuapp.com/api/users/find/${video.userId}`
-      );
+      const res = await axios.get(`/users/find/${video.userId}`);
       setChannel(res.data);
     };
     fetchChannel();
