@@ -15,7 +15,9 @@ const Home = ({ type }) => {
 
   useEffect(() => {
     const fetchVideos = async () => {
-      const res = await axios.get(`/videos/${type}`);
+      const res = await axios.get(
+        `https://server-arctube-production.up.railway.app/api/videos/${type}`
+      );
       setVideos(res.data);
       setLoading(false);
     };

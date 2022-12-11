@@ -20,10 +20,13 @@ const SignIn = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("/auth/signin", {
-        name,
-        password,
-      });
+      const res = await axios.post(
+        "https://server-arctube-production.up.railway.app/api/auth/signin",
+        {
+          name,
+          password,
+        }
+      );
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (error) {
@@ -35,11 +38,14 @@ const SignIn = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("/auth/signup", {
-        name,
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://server-arctube-production.up.railway.app/api/auth/signup",
+        {
+          name,
+          email,
+          password,
+        }
+      );
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (error) {
