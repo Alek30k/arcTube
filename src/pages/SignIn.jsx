@@ -58,11 +58,14 @@ const SignIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         axios
-          .post("/auth/google", {
-            name: result.user.displayName,
-            email: result.user.email,
-            img: result.user.photoURL,
-          })
+          .post(
+            "https://server-arctube-production.up.railway.app/api//auth/google",
+            {
+              name: result.user.displayName,
+              email: result.user.email,
+              img: result.user.photoURL,
+            }
+          )
           .then((res) => {
             dispatch(loginSuccess(res.data));
           });
