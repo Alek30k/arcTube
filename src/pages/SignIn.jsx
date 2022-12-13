@@ -59,7 +59,7 @@ const SignIn = () => {
       .then((result) => {
         axios
           .post(
-            "https://server-arctube-production.up.railway.app/api//auth/google",
+            "https://server-arctube-production.up.railway.app/api/auth/google",
             {
               name: result.user.displayName,
               email: result.user.email,
