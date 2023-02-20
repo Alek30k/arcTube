@@ -21,7 +21,7 @@ const SignIn = () => {
     dispatch(loginStart());
     try {
       const res = await axios.post(
-        "https://server-arctube-production.up.railway.app/api/auth/signin",
+        "https://arctube.onrender.com/api/auth/signin",
         {
           name,
           password,
@@ -39,7 +39,7 @@ const SignIn = () => {
     dispatch(loginStart());
     try {
       const res = await axios.post(
-        "https://server-arctube-production.up.railway.app/api/auth/signup",
+        "https://arctube.onrender.com/api/auth/signup",
         {
           name,
           email,
@@ -58,14 +58,11 @@ const SignIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         axios
-          .post(
-            "https://server-arctube-production.up.railway.app/api/auth/google",
-            {
-              name: result.user.displayName,
-              email: result.user.email,
-              img: result.user.photoURL,
-            }
-          )
+          .post("https://arctube.onrender.com/api/auth/google", {
+            name: result.user.displayName,
+            email: result.user.email,
+            img: result.user.photoURL,
+          })
           .then((res) => {
             dispatch(loginSuccess(res.data));
           });

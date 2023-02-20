@@ -49,5 +49,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://server-arctube-production.up.railway.app/api/"
+  "proxy": "https://arctube.onrender.com/api/"
 }

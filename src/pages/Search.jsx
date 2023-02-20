@@ -17,7 +17,7 @@ const Search = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       const res = await axios.get(
-        `https://server-arctube-production.up.railway.app/api/videos/search${query}`
+        `https://arctube.onrender.com/api/videos/search${query}`
       );
       setVideos(res.data);
     };

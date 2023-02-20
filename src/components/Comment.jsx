@@ -8,7 +8,7 @@ const Comment = ({ comment }) => {
   useEffect(() => {
     const fetchComment = async () => {
       const res = await axios.get(
-        `https://server-arctube-production.up.railway.app/api/users/find/${comment.userId}`
+        `https://arctube.onrender.com/api/users/find/${comment.userId}`
       );
       setChannel(res.data);
     };

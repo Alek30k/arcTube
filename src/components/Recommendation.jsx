@@ -13,7 +13,7 @@ const Recommendation = ({ tags }) => {
   useEffect(() => {
     const fetchVideos = async () => {
       const res = await axios.get(
-        `https://server-arctube-production.up.railway.app/api/videos/tags?tags=${tags}`
+        `https://arctube.onrender.com/api/videos/tags?tags=${tags}`
       );
       setVideos(res.data);
     };

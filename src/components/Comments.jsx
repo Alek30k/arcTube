@@ -14,7 +14,7 @@ const Comments = ({ videoId }) => {
     const fetchComments = async () => {
       try {
         const res = await axios.get(
-          `https://server-arctube-production.up.railway.app/api/comments/${videoId}`
+          `https://arctube.onrender.com/api/comments/${videoId}`
         );
         setComments(res.data);
         setLoading(false);
